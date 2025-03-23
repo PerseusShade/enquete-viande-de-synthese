@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=TT+Lakes+Neue&display=swap');
+
+body {
+    background-image: url('../img/grass_texture.png');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: auto;
+    position: relative;
+    font-family: 'TT Lakes Neue', sans-serif;
+}
+
+/* Ajoute un voile semi-transparent */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4); /* Blanc semi-transparent */
+    pointer-events: none; /* Pour ne pas gêner l'interaction avec la page */
+    z-index: -1;
+}
+
+/* Conteneur principal des parchemins */
+.parchments-wrapper {
+    display: flex;
+    flex-direction: column; /* Empilé par défaut */
+    align-items: center;
+    gap: 40px; /* Espacement en mode mobile */
+    margin-top: 140px; /* Décalage sous le menu */
+    width: 100%;
+}
+
+/* Mode full screen : alignement horizontal avec espacements équilibrés */
+@media screen and (min-width: 1024px) {
+    .parchments-wrapper {
+        flex-direction: row;
+        justify-content: space-evenly; /* Assure gap | parchemin1 | gap | parchemin2 | gap */
+        align-items: flex-start; /* Maintient l'alignement en haut */
+        width: 90vw; /* Prend 80% de la largeur pour garder de l'espace */
+        margin: 140px auto 0; /* Garde le décalage sous le menu */
+        padding-top: 20px; /* Force un padding pour éviter la suppression */
+    }
+}
+
+/* Style des parchemins */
+.parchment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Pour que .content soit centré par rapport à l'image */
+    width: 90%; /* Mode mobile */
+    max-width: 1000px;
+    height: auto; /* Ajuste la hauteur de l'élément pour s'adapter à l'image */
+}
+
+/* Mode full screen : réduit la largeur des parchemins pour respecter l'espacement */
+@media screen and (min-width: 1024px) {
+    .parchment-container {
+        width: 100%; /* Chaque parchemin prend 40%, laissant 10% de chaque côté */
+    }
+    /* Appliquer l'effet miroir sur le deuxième parchemin */
+    .parchments-wrapper .parchment-container:nth-child(2) .parchment-image {
+        transform: scaleX(-1); /* Effet miroir horizontal */
+    }
+}
+
+.parchment-image {
+    width: 100%;
+    height: auto;
+}
+
+/* Centrage parfait du contenu sur le parchemin */
+.content {
+    position: absolute;
+    top: 35%; /* Centrage vertical par rapport à l'image */
+    left: 50%; /* Centrage horizontal par rapport à l'image */
+    transform: translate(-50%, -50%); /* Ajuste parfaitement au centre de l'image */
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre tous les éléments */
+    justify-content: center; /* Centre verticalement */
+}
+
+/* Enlever un margin-top trop élevé pour les éléments avec l'image */
+.parchment-container .parchment-image {
+    width: 100%;
+    height: auto;
+    display: block; /* S'assure que l'image occupe toute la largeur sans espace supplémentaire */
+}
+
+/* Ligne ondulée centrée */
+.wavy-line {
+    border: none;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, black, black 10px, transparent 10px, transparent 20px);
+    margin: 20px 0;
+    width: 80%; /* Ajuste la largeur */
+}
+
+/* Titre en gras centré */
+.subtitle {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Vidéo centrée */
+.video-container {
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 960px;  /* Taille maximale pour la vidéo */
+    position: relative;
+    padding-bottom: 56.25%; /* Ratio 16:9 (hauteur / largeur = 9 / 16 = 0.5625 = 56.25%) */
+    height: 0;
+    overflow: hidden;
+}
+
+/* L'iframe occupe toute la largeur et hauteur de son conteneur */
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+

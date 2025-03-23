@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: 'TT Lakes Neue', sans-serif;
+    background-color: black;
+}
+
+#menu-container {
+    height: 155px;
+    background-color: #222;
+    width: 100%;
+}
+
+.panels {
+    display: flex;
+    width: calc(100vw - 20px);
+    height: calc(100vh - 175px);
+    gap: 10px;
+    margin: 10px;
+}
+
+.panel {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: flex 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.panel:hover {
+    flex: 3;
+}
+
+/* Style pour la croix dans la boîte noire */
+.panel::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 10%;
+    width: 80%;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid black;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0; /* Caché par défaut */
+    transform: translateY(10px); /* Décalé légèrement vers le bas */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+.panel:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.panel--active::after {
+    opacity: 1;
+    transform: translateY(0); /* Rendre le texte visible */
+}
+
+/* Effet au survol */
+.panel:hover::after {
+    opacity: 1;
+    transform: translateY(0); /* Le texte devient visible au survol */
+}
+
+.fullscreen-panel {
+    position: fixed;
+    top: 155px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 155px);
+    background-size: cover;
+    background-position: center;
+    z-index: 999;
+    border-radius: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Popup */
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 2px solid black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
