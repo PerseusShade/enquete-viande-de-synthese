@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/img/logo.png">
+    <link rel="stylesheet" href="../assets/css/menu-style.css">
+    <link rel="stylesheet" href="../assets/css/prospectives-style.css">
+    <title>Scénarios</title>
+</head>
+<body>
+    <div id="menu-container"></div>
+    <div class="panels">
+        <div class="panel" style="background-image: url('../assets/img/prospectives/rejet_complet.png');" onclick="showPopup('Scénario rejet complet', event)" data-title="Rejet complet"></div>
+        <div class="panel" style="background-image: url('../assets/img/prospectives/adoption_progressive.png');" onclick="showPopup('Adoption progressive', event)" data-title="Adoption progressive"></div>
+        <div class="panel" style="background-image: url('../assets/img/prospectives/adoption_totale.png');" onclick="showPopup('Adoption totale', event)" data-title="Adoption totale"></div>
+    </div>
+    
+    <div id="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h2 id="popup-title"></h2>
+        <p id="popup-text"></p>
+    </div>
+
+    <script src="../assets/js/menu-loader.js"></script>
+    <script src="../assets/js/prospectives.js"></script>
+</body>
+</html>
