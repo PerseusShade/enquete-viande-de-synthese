@@ -7,3 +7,15 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => console.error("Erreur lors du chargement du menu :", error));
 });
+
+const basePath = "/projet"; // Remplacez 'projet' par le nom de votre dépôt
+document.querySelectorAll('link, script, img, a').forEach(element => {
+    ['href', 'src'].forEach(attr => {
+        if (element.hasAttribute(attr)) {
+            const value = element.getAttribute(attr);
+            if (value.startsWith('../')) {
+                element.setAttribute(attr, basePath + value.slice(2));
+            }
+        }
+    });
+});
