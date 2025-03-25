@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const images = [];
 
     for (let i = 1; i <= totalImages; i++) {
-        images.push(`/assets/img/sources/image${i}.png`);
+        images.push(`/enquete-viande-de-synthese/assets/img/sources/image${i}.png`);
     }
 
     function preloadImages(urls, callback) {
