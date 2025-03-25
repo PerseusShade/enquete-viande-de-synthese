@@ -1,4 +1,41 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const totalImages = 23;
+    const images = [];
+
+    for (let i = 1; i <= totalImages; i++) {
+        images.push(`/assets/img/sources/image${i}.png`);
+    }
+
+    function preloadImages(urls, callback) {
+        let loaded = 0;
+        let total = urls.length;
+
+        urls.forEach(url => {
+            let img = new Image();
+            img.src = url;
+            img.onload = function () {
+                loaded++;
+                if (loaded === total) {
+                    callback();
+                }
+            };
+            img.onerror = function () {
+                console.warn("Image non trouvée : " + url);
+                loaded++;
+                if (loaded === total) {
+                    callback();
+                }
+            };
+        });
+    }
+
+    preloadImages(images, function () {
+        console.log("Toutes les images sont chargées !");
+        document.getElementById('carousel1').classList.add('show');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
     const carousel1 = document.getElementById('carousel1');
     const carousel2 = document.getElementById('carousel2');
     const swapButton = document.getElementById('swapButton');
