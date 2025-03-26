@@ -10,9 +10,5 @@ This project is led by a group of Master’s students from Université Paris Dau
 
 To do so, they have conducted in-depth research on the key players in this sector, their sometimes contrasting perspectives, and the different possible scenarios. Their goal is to present their findings in an engaging and accessible manner so that everyone can form their own opinion based on the collected data.
 
-## Contact for the Project
-
-If you have any questions or suggestions, feel free to contact the team at: clubenqueteurs@gmail.com
-
 Happy reading!
 
