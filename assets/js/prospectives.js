@@ -117,6 +117,54 @@ function showPopup(title, event) {
         titleElement.style.borderRadius = "12px 12px 0 0";
         titleElement.textContent = title;
 
+        let closeButton = document.createElement("div");
+        closeButton.innerHTML = "&times;";
+        closeButton.style.position = "absolute";
+        closeButton.style.top = "50%";
+        closeButton.style.right = "10px";
+        closeButton.style.transform = "translateY(-50%)";
+        closeButton.style.fontSize = "24px";
+        closeButton.style.cursor = "pointer";
+        closeButton.style.color = "white";
+        closeButton.style.fontWeight = "bold";
+        closeButton.style.transition = "0.3s ease-in-out";
+
+        closeButton.addEventListener("mouseenter", () => {
+            closeButton.style.textShadow = "0px 0px 8px rgba(255, 255, 255, 0.8)";
+            closeButton.style.transform = "translateY(-50%) scale(1.2)";
+        });
+        closeButton.addEventListener("mouseleave", () => {
+            closeButton.style.textShadow = "none";
+            closeButton.style.transform = "translateY(-50%) scale(1)";
+        });
+
+        closeButton.addEventListener("click", () => {
+            if (isAnimating) return;
+            isAnimating = true;
+            clickedPanel.classList.add("hover-fake");
+        
+            textContainer.style.opacity = "0";
+        
+            setTimeout(() => {
+                clonedPanel.style.top = clickedPanel.offsetTop + "px";
+                clonedPanel.style.left = clickedPanel.offsetLeft + "px";
+                clonedPanel.style.width = clickedPanel.offsetWidth + "px";
+                clonedPanel.style.height = clickedPanel.offsetHeight + "px";
+        
+                setTimeout(() => {
+                    panelsContainer.querySelectorAll(".panel").forEach((panel) => {
+                        panel.style.opacity = "1";
+                    });
+        
+                    document.body.removeChild(clonedPanel);
+                    clickedPanel.classList.remove("hover-fake");
+                    isAnimating = false;
+                }, 1000);
+            }, 300);
+        });
+    
+        titleElement.appendChild(closeButton);
+
         let scrollableText = document.createElement("div");
         scrollableText.innerHTML = additionalText;
         scrollableText.style.flex = "1";
