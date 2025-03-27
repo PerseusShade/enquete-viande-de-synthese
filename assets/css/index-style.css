@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=TT+Lakes+Neue&display=swap');
 
 body {
-    background-color: black;
+    background-color: #0a0a0a;
     font-family: 'TT Lakes Neue', sans-serif;
     color: white;
     margin: 0;
@@ -24,10 +24,10 @@ body {
 .neon-box {
     position: relative;
     padding: 20px;
-    border: 2px solid cyan;
+    border: 2px solid white;
     border-radius: 15px;
-    box-shadow: 0 0 15px cyan, inset 0 0 10px cyan;
-    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 15px white, inset 0 0 10px white;
+    background: rgba(0, 0, 0, 0.8);
     text-align: center;
     flex: 1;
     display: flex;
@@ -39,7 +39,7 @@ body {
 .wavy-line {
     border: none;
     height: 2px;
-    background: repeating-linear-gradient(90deg, cyan, cyan 10px, transparent 10px, transparent 20px);
+    background: repeating-linear-gradient(90deg, white, white 10px, transparent 10px, transparent 20px);
     margin: 20px 0;
     width: 80%;
 }
@@ -47,7 +47,7 @@ body {
 .subtitle {
     font-weight: bold;
     font-size: 1.5em;
-    color: cyan;
+    color: white;
 }
 
 .video-container {
