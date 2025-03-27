@@ -1,108 +1,81 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=TT+Lakes+Neue&display=swap');
 
 body {
-    font-family: Arial, sans-serif;
-    overscroll-behavior-y: none;
-    background-color: black;
+    background-color: #0a0a0a;
+    font-family: 'TT Lakes Neue', sans-serif;
     color: white;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 155px;
 }
 
-
-.top-bar {
+.box-wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: stretch;
+    gap: 100px;
+    padding: 0 100px;
+}
+
+.neon-box {
+    position: relative;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 15px;
+    box-shadow: 0 0 15px white, inset 0 0 10px white;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: #333;
+}
+
+.wavy-line {
+    border: none;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, white, white 10px, transparent 10px, transparent 20px);
+    margin: 20px 0;
+    width: 80%;
+}
+
+.subtitle {
+    font-weight: bold;
+    font-size: 1.5em;
     color: white;
-    padding: 15px 20px;
+}
+
+.video-container {
+    text-align: center;
+    margin-top: 40px;
     width: 100%;
-    position: fixed;
+    max-width: 960px;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.video-container iframe {
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 1000;
-}
-
-.title {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 0;
-}
-
-.logos {
-    display: flex;
-    gap: 15px;
-}
-
-.logo {
-    height: 45px;
-    width: auto;
-}
-
-
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    padding: 20px 0;
-    background-color: black;
     width: 100%;
-    position: fixed;
-    top: 73px;
-    left: 0;
-    z-index: 999;
+    height: 100%;
+    border-radius: 15px;
 }
 
-.menu-item {
-    text-decoration: none;
-    color: #00f0ff;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
-    position: relative;
-    transition: color 0.3s ease-in-out;
-}
-
-.menu-item.active {
-    color: #00c6ff;
-    text-shadow: 0 0 8px #a35dff, 0 0 20px #a35dff, 0 0 40px #a35dff, 0 0 80px #a35dff;
-}
-
-
-.menu-item::after {
-    content: "";
+#player {
     position: absolute;
-    left: 50%;
-    bottom: -5px;
-    width: 0;
-    height: 3px;
-    background-color: #00f0ff;
-    transform: translateX(-50%);
-    transition: width 0.4s ease-in-out;
-}
-
-.menu-item:hover::after {
-    width: 100%;
-    left: 50%;
-}
-
-
-
-.content {
-    margin-top: 140px;
-    padding: 20px;
-}
-
-.menu-bar {
-    width: 100%;
-    height: 2px;
-    background-color: #a35dff;
-    position: fixed;
-    top: 153px;
+    top: 0;
     left: 0;
-    z-index: 998;
-    box-shadow: 0 0 15px #a35dff, 0 0 25px #a35dff, 0 0 50px #a35dff;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
 }
