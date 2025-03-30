@@ -67,9 +67,9 @@ const imagesToPreload = [
     "/enquete-viande-de-synthese/assets/img/discours/split-image.png",
     "/enquete-viande-de-synthese/assets/img/discours/surquoi.png",
 
-    "/enquete-viande-de-synthese/assets/img/prospectives/adoption-progre.png",
+    "/enquete-viande-de-synthese/assets/img/prospectives/adoption-progressive.png",
     "/enquete-viande-de-synthese/assets/img/prospectives/adoption_totale.png",
-    "/enquete-viande-de-synthese/assets/img/prospectives/projet_complet.png",
+    "/enquete-viande-de-synthese/assets/img/prospectives/rejet_complet.png",
 
     "/enquete-viande-de-synthese/assets/img/sources/image1.png",
     "/enquete-viande-de-synthese/assets/img/sources/image2.png",
