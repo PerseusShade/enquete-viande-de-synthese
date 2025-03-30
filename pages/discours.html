@@ -3,12 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../assets/img/logo.png">
-    <link rel="stylesheet" href="../assets/css/discours-style.css">
-    <title>Qui sommes-nous ?</title>
+    <link rel="icon" type="image/png" href="/enquete-viande-de-synthese/assets/img/logo.png">
+    <link rel="stylesheet" href="/enquete-viande-de-synthese/assets/css/discours-style.css">
+    <title>Discours</title>
 </head>
 <body>
     <div id="menu-container"></div>
-    <script src="../assets/js/menu-loader.js"></script>
+
+    <div class="content-wrap fade-out">
+        <h1>Discours</h1>
+    </div>
+    <button id="swapDiscours" class="swap-button fade-out">Changer de discours</button>
+      
+    <ul id="hexGrid" class="fade-out">
+        <li class="hex">
+            <a class="hexIn" href="#">
+                <img src="/enquete-viande-de-synthese/assets/img/discours/surquoi.png" alt="" />
+                <h4>???</h4>
+                <p>Sur quoi ?</p>
+            </a>
+        </li>
+        <li class="hex">
+          <a class="hexIn" href="#">
+              <img src="/enquete-viande-de-synthese/assets/img/acteurs/image1.png" alt="" />
+              <h4>En tant que...</h4>
+              <p>Startups et entreprises biotech</p>
+          </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="#">
+                <img src="/enquete-viande-de-synthese/assets/img/acteurs/image2.png" alt="" />
+                <h4>En tant que...</h4>
+                <p>Grands groupes agroalimentaires et investisseurs</p>
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="#">
+                <img src="/enquete-viande-de-synthese/assets/img/acteurs/image3.png" alt="" />
+                <h4>En tant que...</h4>
+                <p>Organismes publiques et de régulation</p>
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="#">
+                <img src="/enquete-viande-de-synthese/assets/img/acteurs/image4.png" alt="" />
+                <h4>En tant que...</h4>
+                <p>Chercheurs et scientifiques</p>
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="#">
+                <img src="/enquete-viande-de-synthese/assets/img/acteurs/image5.png" alt="" />
+                <h4>En tant que...</h4>
+                <p>Gouvernements et ministères</p>
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="#">
+                <img src="/enquete-viande-de-synthese/assets/img/acteurs/image6.png" alt="" />
+                <h4>En tant que...</h4>
+                <p>ONG environnementales et protection animale</p>
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="#">
+                <img src="/enquete-viande-de-synthese/assets/img/acteurs/image7.png" alt="" />
+                <h4>En tant qu'...</h4>
+                <p>Éleveurs</p>
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="#">
+                <img src="/enquete-viande-de-synthese/assets/img/acteurs/image8.png" alt="" />
+                <h4>En tant que...</h4>
+                <p>Consommateur végétarien</p>
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="#">
+                <img src="/enquete-viande-de-synthese/assets/img/acteurs/image9.png" alt="" />
+                <h4>En tant qu'...</h4>
+                <p>Animaux</p>
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="#">
+                <img src="/enquete-viande-de-synthese/assets/img/acteurs/image10.png" alt="" />
+                <h4>En tant que...</h4>
+                <p>Consommateurs et opinion publique</p>
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="#">
+                <img src="/enquete-viande-de-synthese/assets/img/acteurs/image11.png" alt="" />
+                <h4>En tant qu'...</h4>
+                <p>Instances religieuses</p>
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="#">
+                <img src="/enquete-viande-de-synthese/assets/img/acteurs/image12.png" alt="" />
+                <h4>En tant que...</h4>
+                <p>Médias et journalistes</p>
+            </a>
+        </li>
+        <li class="hex">
+            <a class="hexIn" href="#">
+                <img src="/enquete-viande-de-synthese/assets/img/acteurs/image13.png" alt="" />
+                <h4>En tant que...</h4>
+                <p>Distributeurs</p>
+            </a>
+        </li>
+    </ul>
+
+    <div class="image-container-slices fade-in">
+        <img id="mainImage" src="/enquete-viande-de-synthese/assets/img/discours/split-image.png" style="display: none;" alt="Image principale">
+    </div>
+
+    <div class="discoursContainer fade-out" id="discoursContainer">
+        <div id="closeButton">✖</div>
+        <div class="image-container">
+            <img id="discoursImage" src="" alt="Image sélectionnée">
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="text-container">
+            <h3>Titre</h3>
+            <pt>Texte</pt>
+        </div>
+    </div>
+    <script src="/enquete-viande-de-synthese/assets/js/discours.js"></script>
+    <script src="/enquete-viande-de-synthese/assets/js/menu-loader.js"></script>
 </body>
 </html>
