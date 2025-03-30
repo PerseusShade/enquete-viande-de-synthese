@@ -13,32 +13,52 @@ body {
 
 .top-bar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color: #333;
-    color: white;
-    padding: 15px 20px;
+    background-color: #131721;
+    height: 73px;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 500;
+    box-shadow: 0 0 5px #0049b1, 0 0 10px #0049b1;
 }
 
-.title {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 0;
-}
-
-.logos {
+.header-content {
     display: flex;
-    gap: 15px;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    justify-content: center;
 }
 
 .logo {
-    height: 45px;
+    height: 40px;
     width: auto;
+}
+
+.gradient-title {
+    font-size: 1.8rem;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    background: linear-gradient(320deg, #0a449e, #0d85a6, #1ba373);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: colorCycle 8s ease infinite;
+    filter: drop-shadow(0 0 8px rgba(0,73,177,0.8));
+  }  
+
+@keyframes colorCycle {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .menu {
@@ -51,7 +71,7 @@ body {
     position: fixed;
     top: 73px;
     left: 0;
-    z-index: 999;
+    z-index: 499;
 }
 
 .menu-item {
@@ -66,7 +86,9 @@ body {
 
 .menu-item.active {
     color: white;
-    text-shadow: 0 0 8px white, 0 0 20px white, 0 0 40px white, 0 0 80px white;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 
+                 0 0 6px rgba(255, 255, 255, 0.6), 
+                 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 .menu-item::after {
@@ -83,12 +105,6 @@ body {
 
 .menu-item:hover::after {
     width: 100%;
-    left: 50%;
-}
-
-.content {
-    margin-top: 140px;
-    padding: 20px;
 }
 
 .menu-bar {
@@ -96,8 +112,13 @@ body {
     height: 2px;
     background-color: white;
     position: fixed;
-    top: 153px;
+    top: 155px;
     left: 0;
     z-index: 998;
-    box-shadow: 0 0 15px white, 0 0 25px white, 0 0 50px white;
+    box-shadow: 0 5px 15px white, 0 10px 25px white, 0 20px 50px white;
+}
+
+.content {
+    margin-top: 155px;
+    padding: 20px;
 }
