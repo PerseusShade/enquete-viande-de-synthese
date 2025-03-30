@@ -272,6 +272,39 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    hexGrid.addEventListener("click", function(event) {
+        const hexLink = event.target.closest(".hex a");
+        if (!hexLink) return;
+    
+        event.preventDefault();
+        document.body.style.overflow = 'hidden';
+    
+        const imgHex = hexLink.querySelector("img");
+        const roleEl = hexLink.querySelector("p");
+    
+        if (imgHex) {
+            discoursImage.src = imgHex.src;
+        }
+    
+        if (roleEl) {
+            const discoursCategory = titleEl.textContent;
+            const role = roleEl.textContent.trim();
+            const { text, extraText } = getDiscoursText(discoursCategory, role);
+    
+            discoursTitle.innerHTML = `
+                <div style="text-align: center;">${role}</div>
+                <br>
+                <span style="font-weight: normal; font-size: 16px; text-align: center;">${extraText}</span>
+            `;
+            discoursTextEl.innerHTML = text;
+        }
+    
+        hexGrid.classList.replace("fade-in", "fade-out");
+        discoursContainer.classList.replace("fade-out", "fade-in");
+        closeButton.classList.add("visible");
+        swapButton.classList.replace("fade-in", "fade-out");
+    });
+
     // Étape 3 → Retour à l'étape 2 (Fermeture du discours)
     closeButton.addEventListener("click", function () {
         closeButton.classList.remove("visible");
