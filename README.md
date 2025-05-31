@@ -2,7 +2,7 @@
 
 ## About This Project
 
-This website, including its design, development, and code, was entirely created on a voluntary basis by a first-year undergraduate student at Université Paris Dauphine. It serves as a platform to present the research and findings of Master’s students in Marketing and Strategy regarding the future of the cultivated meat industry in France.
+This website, including its design, development, and code, was entirely created on a voluntary basis by an undergraduate student. It serves as a platform to present the research and findings of Master’s students in Marketing and Strategy regarding the future of the cultivated meat industry in France.
 
 ## The Master's Project
 
